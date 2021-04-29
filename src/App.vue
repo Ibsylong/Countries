@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/edit">Edit</router-link>
   </div>
   <router-view />
 </template>
@@ -9,7 +10,7 @@
 <script>
 export default {
   mounted() {
-    return this.$store.dispatch("getData");
+    return this.$store.dispatch("getInvoicesData");
   },
 };
 </script>
