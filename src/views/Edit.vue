@@ -68,14 +68,12 @@
     </button>
     <br />
     <div v-if="this.itemUpdateSuccess">Item was successfully added.</div>
-
-    <h1>The object:</h1>
-    <p>{{ this.filteredInvoice[0] }}</p>
   </div>
 </template>
 
 <script>
 export default {
+  name: "Edit",
   data() {
     return {
       invoiceId: this.$route.params.id,
