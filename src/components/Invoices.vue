@@ -2,9 +2,7 @@
   <div class="wrapper">
     <section class="header">
       <div class="labels">
-        <h1 class="labels__title">
-          Invoices
-        </h1>
+        <h1 class="labels__title">Invoices</h1>
         <div class="counter">
           <p class="counter__text">
             There are X total invoices
