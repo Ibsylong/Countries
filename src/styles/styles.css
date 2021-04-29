@@ -1,2 +1,82 @@
-@import url(_variables.scss);
+* {
+  font-family: "Spartan", sans-serif;
+}
+
+.wrapper {
+  background-color: #F8F8FB;
+  height: 100vh;
+}
+
+@media screen and (min-width: 680px) {
+  .header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+  .header .labels {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .header .labels .labels__title {
+    color: #1E2139;
+    font-size: 32px;
+    margin-bottom: -0.25rem;
+  }
+  .header .labels .counter__text {
+    color: #888EB0;
+    font-size: 12px;
+  }
+  .header .functions {
+    -ms-grid-column: 4;
+    grid-column: 4/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header .functions .filter {
+    margin-right: 1rem;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .header .functions .create {
+    background-color: #7C5DFA;
+    color: #DFE3FA;
+    width: 40%;
+    height: 50%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    border-radius: 100px;
+  }
+  .filter__multiselect {
+    width: 100%;
+  }
+  .filter__selectBox {
+    position: relative;
+  }
+  .filter__selectBox select {
+    font-weight: bold;
+    width: 100%;
+  }
+  .filter__overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  #filter__checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+  #filter__checkboxes label {
+    display: block;
+  }
+  #filter__checkboxes label:hover {
+    background-color: #1e90ff;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

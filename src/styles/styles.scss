@@ -1,1 +1,80 @@
-@import "variables.scss"
+@import "variables";
+@import "mixin";
+
+*{
+  font-family: $bodyFontFamily;
+}
+.wrapper{
+  background-color: $background-light;
+  height: 100vh;
+}
+
+@include desktop{
+.header{
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  .labels{
+    grid-column: 1/2;
+    .labels__title{
+      color: $blue1;
+      font-size: $H1Fontsize;
+      margin-bottom: -0.25rem; 
+    }
+    .counter__text{
+      color: $grey2;
+      font-size: $bodyText1FontSize;
+    }
+
+  }
+  .functions{
+    grid-column: 4/4;
+    display: flex;
+    .filter{
+      margin-right: 1rem;
+      align-self: center;
+    }
+    .create{
+      background-color: $purple1;
+      color: $grey;
+      width: 40%;
+      height: 50%;
+      align-self: center;
+      border-radius: 100px;
+    }
+  }
+
+}
+.filter__multiselect {
+    width: 100%;
+  }
+  
+  .filter__selectBox {
+    position: relative;
+  }
+  
+  .filter__selectBox select {
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .filter__overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #filter__checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+  
+  #filter__checkboxes label {
+    display: block;
+  }
+  
+  #filter__checkboxes label:hover {
+    background-color: #1e90ff;
+  }
+}
