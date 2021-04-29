@@ -64,7 +64,9 @@
       Add invoice
     </button>
     <br />
-    <div v-if="this.itemAddSuccess">Item was successfully added.</div>
+    <div v-if="this.itemAddSuccess" style="color:green;">
+      The invoice was successfully added.
+    </div>
   </div>
 </template>
 
