@@ -1,9 +1,13 @@
 <template>
   <nav>
-    <div class="navicons">
-      <img src="/src/assets/logo.svg" />
-      <img src="/icon-moon.svg" />
-      <img :src="require('@/assets/image-avatar.jpg')" />
+    <div class="nav_icons">
+      
+      <img class="nav_logo" :src="require('@/assets/logo.svg')"  />
+      
+      <img class="nav_darkmode" :src="require('@/assets/icon-moon.svg')"  />
+      <div class="nav_avatar-border">
+      <img class="nav_avatar" :src="require('@/assets/image-avatar.jpg')" />
+      </div>
     </div>
   </nav>
 
@@ -199,14 +203,42 @@ nav {
   width: 115px;
   top: 0;
   left: 0;
+  z-index: 20;
   background: #252945;
-  border-radius: 0 25px 25px 0;
+  border-radius: 0 20px 20px 0; 
 }
 
-.navicons {
+.nav_icons {
+  
   display: flex;
+  min-height: 100%;
   flex-direction: column;
-  margin: 45px;
+  
+  
+    .nav_logo {
+      margin-bottom: auto;
+      min-width: 40%;
+      align-self: center;
+      padding-top: 30px;
+      
+    }
+    
+    .nav_darkmode {
+      
+      min-width: 20%;
+      padding-bottom: 40px;
+      align-self: center;
+    }
+
+    .nav_avatar {
+      max-width: 50%;
+      border-radius: 50%;
+      margin: 25px 25px 25px 25px;
+    }
+
+    .nav_avatar-border {
+      border-top: 1px solid black;
+    }
 }
 
 .FormButtons {
