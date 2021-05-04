@@ -7,7 +7,7 @@
         </h1>
         <div class="counter">
           <p class="counter__text">
-            There are X total invoices
+            There are {{this.dataContent.length}} total invoices
           </p>
         </div>
       </div>
@@ -32,50 +32,37 @@
           </div>
         </form>
         <button class="create" @click="goToAddPage()">
-          <svg
-            class="create__icon"
-            width="11"
-            height="11"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.313 10.023v-3.71h3.71v-2.58h-3.71V.023h-2.58v3.71H.023v2.58h3.71v3.71z"
-              fill="#7C5DFA"
-              fill-rule="nonzero"
-            />
-          </svg>
-          New Invoice
+          <div class="create__circle">
+            <img class="create__plus" :src="require('@/assets/icon-plus.svg')">
+          </div>
+            New Invoice
         </button>
       </div>
     </section>
     <section class="invoices">
-      <tr
-        class="invoices__table"
+        <div class="invoice"         
         v-for="invoice in dataContent"
         :key="invoice.id"
-        @click="goToEditPage(invoice.id)"
-      >
-        <td class="invoice">
-          <h3 class="invoice__title">
-            {{ invoice.id }}
+        @click="goToEditPage(invoice.id)">
+          <h3 class="invoice__id">
+            <span class="invoice__hashTag">#</span>{{ invoice.id }}
           </h3>
-          <p class="invoice__due-date">
-            {{ invoice.paymentDue }}
+          <p class="invoice__dueDate">
+            <span>Due </span>{{ invoice.paymentDue }}
           </p>
-          <p class="invoice__name">
+          <h3 class="invoice__name">
             {{ invoice.clientName }}
-          </p>
+          </h3>
           <h2 class="invoice__price">
-            {{ invoice.total }}
+            <span>£</span>{{ invoice.total }}
           </h2>
           <div class="invoice__status">
-            <p class="status__text">
+            <h3 class="status__text" v-bind:class="{}">
               {{ invoice.status }}
-            </p>
+            </h3>
           </div>
           <i class="invoice__arrow"> </i>
-        </td>
-      </tr>
+        </div>
     </section>
   </div>
 </template>

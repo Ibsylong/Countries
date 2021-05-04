@@ -6,13 +6,14 @@
 }
 .wrapper{
   background-color: $background-light;
-  height: 100vh;
+  height: auto;
 }
 
 @include desktop{
 .header{
   display:grid;
   grid-template-columns: auto auto auto auto;
+  margin-bottom: 3rem;
   .labels{
     grid-column: 1/2;
     .labels__title{
@@ -34,15 +35,69 @@
       align-self: center;
     }
     .create{
+      display: flex;
       background-color: $purple1;
       color: $grey;
-      width: 40%;
+      width: 30%;
       height: 50%;
       align-self: center;
       border-radius: 100px;
+      align-items: center;
+      border: none;
+      .create__circle{
+        display: flex;
+        background-color: white;
+        border-radius: 50%;
+        height: 80%;
+        width: 27%;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+      }
     }
   }
+  
+}
+.invoices{
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  .invoice{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    align-items: center;
+    justify-items: center;
+    width: 50%;
+    .invoice__id{
+      .invoice__hashTag{
+        color: $grey2;
+      }
+      color: $blue1;
+      font-size: $H3FontSize;
+      line-height: $H3Line;
+      letter-spacing: $H3Spacing;
 
+    }
+    .invoice__dueDate, .invoice__name{
+      color: $grey2;
+      font-size: $H3FontSize;
+      line-height: $H3Line;
+      letter-spacing: $H3Spacing;
+    }
+    .invoice__price{
+      color: $blue1;
+      font-size: $H2FontSize;
+      line-height: $H2Line;
+      letter-spacing: $H2Spacing;
+    }
+  }
+  .invoice:hover{
+    border: 1px  solid $purple1;
+  }
 }
 .filter__multiselect {
     width: 100%;

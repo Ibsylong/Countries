@@ -8,6 +8,7 @@ export default createStore({
   mutations: {
     setInvoicesData: (state, res) => {
       state.invoices = res.data;
+      state.count = res.data.length;
     },
     DELETE_INVOICE(state, id) {
       var index = state.invoices.findIndex(i => i.id == id);

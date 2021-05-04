@@ -4,7 +4,7 @@
 
 .wrapper {
   background-color: #F8F8FB;
-  height: 100vh;
+  height: auto;
 }
 
 @media screen and (min-width: 680px) {
@@ -13,6 +13,7 @@
     display: grid;
     -ms-grid-columns: auto auto auto auto;
         grid-template-columns: auto auto auto auto;
+    margin-bottom: 3rem;
   }
   .header .labels {
     -ms-grid-column: 1;
@@ -42,14 +43,83 @@
         align-self: center;
   }
   .header .functions .create {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     background-color: #7C5DFA;
     color: #DFE3FA;
-    width: 40%;
+    width: 30%;
     height: 50%;
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
         align-self: center;
     border-radius: 100px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+  }
+  .header .functions .create .create__circle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: white;
+    border-radius: 50%;
+    height: 80%;
+    width: 27%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 1rem;
+  }
+  .invoices {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    justify-items: center;
+  }
+  .invoices .invoice {
+    margin-top: 1rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    width: 50%;
+  }
+  .invoices .invoice .invoice__id {
+    color: #1E2139;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8;
+  }
+  .invoices .invoice .invoice__id .invoice__hashTag {
+    color: #888EB0;
+  }
+  .invoices .invoice .invoice__dueDate, .invoices .invoice .invoice__name {
+    color: #888EB0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8;
+  }
+  .invoices .invoice .invoice__price {
+    color: #1E2139;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: -0.63;
+  }
+  .invoices .invoice:hover {
+    border: 1px solid #7C5DFA;
   }
   .filter__multiselect {
     width: 100%;
